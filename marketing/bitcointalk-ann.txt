@@ -1,0 +1,100 @@
+BAŞLIK:
+[ANN][NXR] NEXARA — AI Trading Bot Access Token | Deflationary | Staking | Superajan
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+KONU: Announcements (Altcoins)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[center][size=20pt][b]NEXARA[/b][/size]
+[size=14pt]Trade Smarter. Stake Deeper.[/size][/center]
+
+[hr]
+
+[b][size=14pt]WHAT IS NEXARA?[/size][/b]
+
+Nexara (NXR) is a deflationary ERC-20 token that tokenizes access to [b]Superajan[/b] — a professional-grade AI trading bot operating on Binance USD-M perpetual futures.
+
+NXR holders stake their tokens to unlock bot features and share in the bot's trading revenue.
+
+[hr]
+
+[b][size=12pt]TOKEN UTILITY[/size][/b]
+
+[list]
+[li]Stake NXR → Access AI trading bot (tiered system)[/li]
+[li]Bot revenue → Distributed to NXR stakers[/li]
+[li]2% of every transfer is burned forever[/li]
+[li]1% of every transfer goes to staking rewards[/li]
+[/list]
+
+[hr]
+
+[b][size=12pt]TIER SYSTEM[/size][/b]
+
+[table]
+[tr][th]Tier[/th][th]Required Stake[/th][th]Features[/th][/tr]
+[tr][td]Bronze[/td][td]10,000 NXR[/td][td]Basic signals, 3 trading pairs[/td][/tr]
+[tr][td]Silver[/td][td]50,000 NXR[/td][td]Whale tracking, advanced signals, 10 pairs[/td][/tr]
+[tr][td]Gold[/td][td]200,000 NXR[/td][td]Full access, priority support, unlimited[/td][/tr]
+[/table]
+
+[hr]
+
+[b][size=12pt]TOKENOMICS[/size][/b]
+
+[list]
+[li]Total Supply: 100,000,000 NXR[/li]
+[li]Transfer Burn: 2%[/li]
+[li]Staking Fee: 1%[/li]
+[li]Max Wallet: 1,000,000 NXR (anti-whale)[/li]
+[li]Staking APY: 12%[/li]
+[li]Lock Period: 30 days[/li]
+[/list]
+
+[hr]
+
+[b][size=12pt]TOKEN DISTRIBUTION[/size][/b]
+
+[list]
+[li]25% — Staking Rewards[/li]
+[li]20% — Liquidity Pool[/li]
+[li]15% — Team & Development (12mo vesting)[/li]
+[li]15% — Community & Marketing[/li]
+[li]15% — Treasury (Governance)[/li]
+[li]10% — IDO[/li]
+[/list]
+
+[hr]
+
+[b][size=12pt]CONTRACT ADDRESSES (Sepolia Testnet)[/size][/b]
+
+Token:   [b]0xa14F7e4DE163Bc05297AF005B6cD44A770842187[/b]
+Staking: [b]0xa589014ee01E4F4f473ABD5587d304fA4879F5E4[/b]
+
+Verify: https://sepolia.etherscan.io/address/0xa14F7e4DE163Bc05297AF005B6cD44A770842187
+
+[hr]
+
+[b][size=12pt]ROADMAP[/size][/b]
+
+[list]
+[li][b]Q2 2026[/b] ✅ — Token + Staking deployed on testnet[/li]
+[li][b]Q3 2026[/b] 🔄 — Mainnet launch + Bot access integration[/li]
+[li][b]Q4 2026[/b] 🔜 — Uniswap V3 listing + CoinGecko/CMC[/li]
+[li][b]2027[/b]    🔮 — Governance + Multi-exchange + Mobile app[/li]
+[/list]
+
+[hr]
+
+[b][size=12pt]LINKS[/size][/b]
+
+[list]
+[li]Telegram: [ekle][/li]
+[li]Twitter: [ekle][/li]
+[li]GitHub: [ekle][/li]
+[li]Whitepaper: [ekle][/li]
+[/list]
+
+[hr]
+
+[center][i]This is not financial advice. Do your own research.[/i][/center]

@@ -1,0 +1,68 @@
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+HER FORMA KOPYALA YAPISTIR
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Token Name:
+Nexara
+
+Symbol / Ticker:
+NXR
+
+Contract Address:
+0xa14F7e4DE163Bc05297AF005B6cD44A770842187
+
+Network / Chain:
+Ethereum
+
+Website:
+https://nexara-token.netlify.app
+
+Telegram:
+https://t.me/NexaraOfficial
+
+Twitter:
+https://twitter.com/NexaraToken
+
+Total Supply:
+100,000,000
+
+Decimals:
+18
+
+Short Description (1 satır):
+Stake NXR to access Superajan AI trading bot and earn revenue share. 2% deflationary burn per transfer.
+
+Long Description:
+Nexara (NXR) is a deflationary ERC-20 utility token that tokenizes access to Superajan, an AI-powered algorithmic trading bot on Binance USD-M perpetual futures. Token holders stake NXR to unlock tiered bot access (Bronze/Silver/Gold) and earn a proportional share of the bot's trading revenue. Every transfer permanently burns 2% of NXR, creating deflationary supply dynamics. The protocol features 12% APY staking rewards funded by transfer fees, anti-whale protection limiting wallets to 1% of total supply, and a 30-day staking lock period.
+
+Launch Date:
+Q3 2026
+
+Category:
+DeFi / Utility
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SITE 1: coinsniper.net/add-listing
+Kopyala yapistir, gonder
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SITE 2: coinhunt.cc/submit
+Kopyala yapistir, gonder
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SITE 3: coinvote.cc/add-coin
+Kopyala yapistir, gonder
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SITE 4: gemfinder.io/submit
+Kopyala yapistir, gonder
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+DexScreener - Token Info Guncelle:
+dexscreener.com/ethereum/0xa14F7e4DE163Bc05297AF005B6cD44A770842187
+"Update Token Info" tikla → website + sosyal medya gir
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

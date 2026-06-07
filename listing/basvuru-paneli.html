@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8"/>
+<title>NEXARA — Başvuru Paneli</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:#0a0a0f;color:#e0e0e0;font-family:Inter,sans-serif;padding:20px;}
+h1{color:#4fc3f7;font-size:1.8rem;margin-bottom:8px;}
+.sub{color:#6b7280;margin-bottom:24px;}
+.sites{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px;}
+.card{background:#161b22;border:1px solid #30363d;border-radius:12px;padding:20px;}
+.card h3{color:#4fc3f7;margin-bottom:4px;font-size:1rem;}
+.card .url{color:#6b7280;font-size:.75rem;margin-bottom:12px;}
+.fields{display:flex;flex-direction:column;gap:8px;margin-bottom:12px;}
+.field{display:flex;gap:8px;align-items:center;}
+.field label{width:110px;font-size:.75rem;color:#6b7280;flex-shrink:0;}
+.field .val{flex:1;background:#0d1117;border:1px solid #21262d;border-radius:6px;padding:6px 10px;font-size:.8rem;color:#e0e0e0;cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.field .val:hover{border-color:#4fc3f7;color:#4fc3f7;}
+.btns{display:flex;gap:8px;flex-wrap:wrap;}
+.btn-open{background:#1d4ed8;color:#fff;border:none;padding:8px 16px;border-radius:8px;font-size:.8rem;font-weight:600;cursor:pointer;text-decoration:none;display:inline-block;}
+.btn-open:hover{background:#2563eb;}
+.btn-fill{background:#166534;color:#fff;border:none;padding:8px 16px;border-radius:8px;font-size:.8rem;font-weight:600;cursor:pointer;}
+.btn-fill:hover{background:#15803d;}
+.toast{position:fixed;bottom:20px;right:20px;background:#166534;color:#fff;padding:10px 20px;border-radius:8px;font-size:.85rem;display:none;z-index:999;}
+.progress{background:#161b22;border:1px solid #30363d;border-radius:12px;padding:20px;margin-bottom:20px;}
+.progress h3{color:#4fc3f7;margin-bottom:12px;}
+.step{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid #21262d;}
+.step:last-child{border:none;}
+.check{width:22px;height:22px;border-radius:50%;border:2px solid #30363d;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;font-size:.75rem;}
+.check.done{background:#166534;border-color:#166534;}
+.step-name{flex:1;font-size:.875rem;}
+.step-status{font-size:.75rem;color:#6b7280;}
+</style>
+</head>
+<body>
+
+<h1>🔷 NEXARA Başvuru Paneli</h1>
+<p class="sub">Her alana tıkla → otomatik kopyalanır. Siteyi aç → yapıştır → gönder.</p>
+
+<!-- İlerleme Takibi -->
+<div class="progress">
+  <h3>📋 İlerleme</h3>
+  <div class="step"><div class="check" onclick="toggle(this)">✓</div><div class="step-name">CoinSniper listing</div><div class="step-status">coinsniper.net</div></div>
+  <div class="step"><div class="check" onclick="toggle(this)">✓</div><div class="step-name">CoinHunt listing</div><div class="step-status">coinhunt.cc</div></div>
+  <div class="step"><div class="check" onclick="toggle(this)">✓</div><div class="step-name">CoinVote listing</div><div class="step-status">coinvote.cc</div></div>
+  <div class="step"><div class="check" onclick="toggle(this)">✓</div><div class="step-name">GemFinder listing</div><div class="step-status">gemfinder.io</div></div>
+  <div class="step"><div class="check" onclick="toggle(this)">✓</div><div class="step-name">DexScreener token info</div><div class="step-status">dexscreener.com</div></div>
+  <div class="step"><div class="check" onclick="toggle(this)">✓</div><div class="step-name">Netlify site sahiplen</div><div class="step-status">app.netlify.com</div></div>
+  <div class="step"><div class="check" onclick="toggle(this)">✓</div><div class="step-name">Twitter @NexaraToken aç</div><div class="step-status">twitter.com</div></div>
+  <div class="step"><div class="check" onclick="toggle(this)">✓</div><div class="step-name">Telegram grubu kur</div><div class="step-status">telegram.org</div></div>
+  <div class="step"><div class="check" onclick="toggle(this)">✓</div><div class="step-name">Reddit r/CryptoMoonShots</div><div class="step-status">reddit.com</div></div>
+  <div class="step"><div class="check" onclick="toggle(this)">✓</div><div class="step-name">MEXC listing başvurusu</div><div class="step-status">mexc.com</div></div>
+</div>
+
+<!-- Ortak Veriler -->
+<div class="sites">
+
+  <div class="card">
+    <h3>📋 Ortak Bilgiler</h3>
+    <p class="url">Her forma bunları kopyala yapıştır</p>
+    <div class="fields">
+      <div class="field"><label>Token Adı</label><div class="val" onclick="kopyala(this)">Nexara</div></div>
+      <div class="field"><label>Sembol</label><div class="val" onclick="kopyala(this)">NXR</div></div>
+      <div class="field"><label>Kontrat</label><div class="val" onclick="kopyala(this)" title="0xa14F7e4DE163Bc05297AF005B6cD44A770842187">0xa14F7e4DE163Bc05297AF005B6cD44A770842187</div></div>
+      <div class="field"><label>Ağ</label><div class="val" onclick="kopyala(this)">Ethereum</div></div>
+      <div class="field"><label>Website</label><div class="val" onclick="kopyala(this)">https://nexara-token.netlify.app</div></div>
+      <div class="field"><label>Telegram</label><div class="val" onclick="kopyala(this)">https://t.me/NexaraOfficial</div></div>
+      <div class="field"><label>Twitter</label><div class="val" onclick="kopyala(this)">https://twitter.com/NexaraToken</div></div>
+      <div class="field"><label>Toplam Arz</label><div class="val" onclick="kopyala(this)">100000000</div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>📝 Açıklama (Kısa)</h3>
+    <p class="url">Kopyala yapıştır</p>
+    <div class="fields">
+      <div class="field"><label>TR</label><div class="val" onclick="kopyala(this)" style="white-space:normal;font-size:.75rem;">NXR stake ederek Superajan AI trading botuna eriş ve bot gelirinden pay al. Her transferde %2 yakılır.</div></div>
+      <div class="field"><label>EN</label><div class="val" onclick="kopyala(this)" style="white-space:normal;font-size:.75rem;">Stake NXR to access Superajan AI trading bot and earn revenue share. 2% deflationary burn per transfer.</div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>📝 Açıklama (Uzun)</h3>
+    <p class="url">Kopyala yapıştır</p>
+    <div class="fields">
+      <div class="field"><label>EN</label><div class="val" onclick="kopyala(this)" style="white-space:normal;font-size:.75rem;line-height:1.5;">Nexara (NXR) is a deflationary ERC-20 token that tokenizes access to Superajan, an AI-powered trading bot on Binance USD-M perpetual futures. Stake NXR to unlock bot features (Bronze/Silver/Gold tiers) and earn revenue share. 2% burned on every transfer. 12% APY staking. Anti-whale protection.</div></div>
+    </div>
+  </div>
+
+  <!-- COINSNIPER -->
+  <div class="card">
+    <h3>🎯 1. CoinSniper</h3>
+    <p class="url">coinsniper.net/add-listing — Kayıt gerekmez!</p>
+    <div class="fields">
+      <div class="field"><label>Coin Name</label><div class="val" onclick="kopyala(this)">Nexara</div></div>
+      <div class="field"><label>Symbol</label><div class="val" onclick="kopyala(this)">NXR</div></div>
+      <div class="field"><label>Contract</label><div class="val" onclick="kopyala(this)" title="0xa14F7e4DE163Bc05297AF005B6cD44A770842187">0xa14F7e4DE163Bc05297AF005B6cD44A770842187</div></div>
+      <div class="field"><label>Launch Date</label><div class="val" onclick="kopyala(this)">2026-07-01</div></div>
+    </div>
+    <div class="btns">
+      <a class="btn-open" href="https://coinsniper.net/add-listing" target="_blank">Siteyi Aç →</a>
+    </div>
+  </div>
+
+  <!-- COINHUNT -->
+  <div class="card">
+    <h3>🎯 2. CoinHunt</h3>
+    <p class="url">coinhunt.cc/submit — Ücretsiz kayıt</p>
+    <div class="fields">
+      <div class="field"><label>Name</label><div class="val" onclick="kopyala(this)">Nexara</div></div>
+      <div class="field"><label>Ticker</label><div class="val" onclick="kopyala(this)">NXR</div></div>
+      <div class="field"><label>Chain</label><div class="val" onclick="kopyala(this)">Ethereum</div></div>
+      <div class="field"><label>Contract</label><div class="val" onclick="kopyala(this)" title="0xa14F7e4DE163Bc05297AF005B6cD44A770842187">0xa14F7e4DE163Bc05297AF005B6cD44A770842187</div></div>
+    </div>
+    <div class="btns">
+      <a class="btn-open" href="https://coinhunt.cc/submit" target="_blank">Siteyi Aç →</a>
+    </div>
+  </div>
+
+  <!-- COINVOTE -->
+  <div class="card">
+    <h3>🎯 3. CoinVote</h3>
+    <p class="url">coinvote.cc/add-coin — Ücretsiz</p>
+    <div class="fields">
+      <div class="field"><label>Name</label><div class="val" onclick="kopyala(this)">Nexara</div></div>
+      <div class="field"><label>Symbol</label><div class="val" onclick="kopyala(this)">NXR</div></div>
+      <div class="field"><label>Website</label><div class="val" onclick="kopyala(this)">https://nexara-token.netlify.app</div></div>
+    </div>
+    <div class="btns">
+      <a class="btn-open" href="https://coinvote.cc/add-coin" target="_blank">Siteyi Aç →</a>
+    </div>
+  </div>
+
+  <!-- GEMFINDER -->
+  <div class="card">
+    <h3>🎯 4. GemFinder</h3>
+    <p class="url">gemfinder.io/submit — Ücretsiz</p>
+    <div class="fields">
+      <div class="field"><label>Name</label><div class="val" onclick="kopyala(this)">Nexara</div></div>
+      <div class="field"><label>Symbol</label><div class="val" onclick="kopyala(this)">NXR</div></div>
+      <div class="field"><label>Contract</label><div class="val" onclick="kopyala(this)" title="0xa14F7e4DE163Bc05297AF005B6cD44A770842187">0xa14F7e4DE163Bc05297AF005B6cD44A770842187</div></div>
+    </div>
+    <div class="btns">
+      <a class="btn-open" href="https://gemfinder.io/submit" target="_blank">Siteyi Aç →</a>
+    </div>
+  </div>
+
+  <!-- DEXSCREENER -->
+  <div class="card">
+    <h3>🎯 5. DexScreener Token Info</h3>
+    <p class="url">dexscreener.com — Ücretsiz, MetaMask ile imzala</p>
+    <div class="fields">
+      <div class="field"><label>Website</label><div class="val" onclick="kopyala(this)">https://nexara-token.netlify.app</div></div>
+      <div class="field"><label>Twitter</label><div class="val" onclick="kopyala(this)">https://twitter.com/NexaraToken</div></div>
+      <div class="field"><label>Telegram</label><div class="val" onclick="kopyala(this)">https://t.me/NexaraOfficial</div></div>
+    </div>
+    <div class="btns">
+      <a class="btn-open" href="https://dexscreener.com/ethereum/0xa14F7e4DE163Bc05297AF005B6cD44A770842187" target="_blank">Siteyi Aç →</a>
+    </div>
+  </div>
+
+  <!-- NETLIFY CLAIM -->
+  <div class="card">
+    <h3>🌐 6. Website Sahiplen</h3>
+    <p class="url">Netlify ücretsiz hesap aç → sitenin sahibi ol</p>
+    <div class="fields">
+      <div class="field"><label>Site URL</label><div class="val" onclick="kopyala(this)">https://nexara-token.netlify.app</div></div>
+    </div>
+    <div class="btns">
+      <a class="btn-open" href="https://app.netlify.com/signup" target="_blank">Netlify Kayıt →</a>
+      <a class="btn-open" href="https://nexara-token.netlify.app" target="_blank" style="background:#166534;">Siteyi Gör →</a>
+    </div>
+  </div>
+
+  <!-- MEXC -->
+  <div class="card">
+    <h3>🏦 7. MEXC Listing Başvurusu</h3>
+    <p class="url">mexc.com/listing/application — Ücretsiz form</p>
+    <div class="fields">
+      <div class="field"><label>Project</label><div class="val" onclick="kopyala(this)">Nexara</div></div>
+      <div class="field"><label>Token</label><div class="val" onclick="kopyala(this)">NXR</div></div>
+      <div class="field"><label>Contract</label><div class="val" onclick="kopyala(this)" title="0xa14F7e4DE163Bc05297AF005B6cD44A770842187">0xa14F7e4DE163Bc05297AF005B6cD44A770842187</div></div>
+      <div class="field"><label>Use Case</label><div class="val" onclick="kopyala(this)">AI trading bot access tokenization with revenue sharing</div></div>
+    </div>
+    <div class="btns">
+      <a class="btn-open" href="https://www.mexc.com/listing/application" target="_blank">Siteyi Aç →</a>
+    </div>
+  </div>
+
+  <!-- GATE.IO -->
+  <div class="card">
+    <h3>🏦 8. Gate.io Listing</h3>
+    <p class="url">gate.io/en/listing/apply — Ücretsiz</p>
+    <div class="fields">
+      <div class="field"><label>Token Name</label><div class="val" onclick="kopyala(this)">Nexara</div></div>
+      <div class="field"><label>Symbol</label><div class="val" onclick="kopyala(this)">NXR</div></div>
+      <div class="field"><label>Website</label><div class="val" onclick="kopyala(this)">https://nexara-token.netlify.app</div></div>
+    </div>
+    <div class="btns">
+      <a class="btn-open" href="https://www.gate.io/en/listing/apply" target="_blank">Siteyi Aç →</a>
+    </div>
+  </div>
+
+  <!-- REDDIT -->
+  <div class="card">
+    <h3>📣 9. Reddit Post</h3>
+    <p class="url">r/CryptoMoonShots — Ücretsiz</p>
+    <div class="fields">
+      <div class="field"><label>Başlık</label><div class="val" onclick="kopyala(this)" style="white-space:normal;font-size:.75rem;">[ANN] Nexara (NXR) — Stake to Access AI Trading Bot | 2% Burn | 12% APY | Anti-Whale</div></div>
+    </div>
+    <div class="btns">
+      <a class="btn-open" href="https://www.reddit.com/r/CryptoMoonShots/submit" target="_blank">Reddit'e Git →</a>
+    </div>
+  </div>
+
+  <!-- TWITTER -->
+  <div class="card">
+    <h3>🐦 10. Twitter İlk Tweet</h3>
+    <p class="url">@NexaraToken hesabından paylaş</p>
+    <div class="fields">
+      <div class="field"><label>Tweet</label><div class="val" onclick="kopyala(this)" style="white-space:normal;font-size:.75rem;line-height:1.5;">🚀 Nexara (NXR) is LIVE on Ethereum! Stake NXR → Access Superajan AI bot → Earn revenue share 🔥 2% burn on every transfer 📈 12% APY staking 🛡️ Anti-whale protection Contract: 0xa14F7e4DE163Bc05297AF005B6cD44A770842187 #NXR #Nexara #DeFi #Ethereum</div></div>
+    </div>
+    <div class="btns">
+      <a class="btn-open" href="https://twitter.com/intent/tweet" target="_blank">Twitter'a Git →</a>
+    </div>
+  </div>
+
+</div>
+
+<div id="toast" class="toast">✓ Kopyalandı!</div>
+
+<script>
+function kopyala(el) {
+  const text = el.title || el.textContent.trim();
+  navigator.clipboard.writeText(text).then(() => {
+    el.style.borderColor = '#4fc3f7';
+    el.style.color = '#4fc3f7';
+    const t = document.getElementById('toast');
+    t.style.display = 'block';
+    setTimeout(() => {
+      t.style.display = 'none';
+      el.style.borderColor = '';
+      el.style.color = '';
+    }, 1500);
+  });
+}
+
+function toggle(el) {
+  el.classList.toggle('done');
+  const step = el.parentElement;
+  step.style.opacity = el.classList.contains('done') ? '0.5' : '1';
+}
+</script>
+</body>
+</html>

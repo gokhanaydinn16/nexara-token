@@ -1,0 +1,66 @@
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+COINGECKO BAŞVURU FORMU — HAZIR METİN
+Başvuru: https://www.coingecko.com/en/coins/submit
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[1] COIN/TOKEN NAME
+Nexara
+
+[2] SYMBOL/TICKER
+NXR
+
+[3] COIN DESCRIPTION (English)
+Nexara (NXR) is a deflationary ERC-20 token that tokenizes access
+to Superajan, an AI-powered algorithmic trading bot operating on
+Binance USD-M perpetual futures markets. Token holders stake NXR
+to unlock tiered bot access (Bronze/Silver/Gold) and earn a share
+of the bot's trading revenue. Every transfer burns 2% of NXR
+permanently, creating a deflationary supply mechanism. The protocol
+features a 12% APY staking system funded by transfer fees, and
+anti-whale protection limiting single wallet holdings to 1% of
+total supply.
+
+[4] COIN DESCRIPTION (Türkçe — kendi notun için)
+Nexara (NXR), yapay zeka destekli Superajan trading botuna
+stake ederek erişimi tokenize eden deflasyoner bir ERC-20
+tokenıdır. Her transferde %2 yakılır, stake edenlere %12 APY
+sağlanır ve bot gelirleri NXR stake edenlere dağıtılır.
+
+[5] WEBSITE
+https://nexara-token.netlify.app
+
+[6] WHITEPAPER
+https://nexara-token.netlify.app/whitepaper
+
+[7] CONTRACT ADDRESS (Mainnet deploy sonrası güncelle)
+Şimdilik Sepolia: 0xa14F7e4DE163Bc05297AF005B6cD44A770842187
+Mainnet sonrası: [yeni adres]
+
+[8] NETWORK
+Ethereum (ERC-20)
+
+[9] TOTAL SUPPLY
+100,000,000
+
+[10] TWITTER
+https://twitter.com/NexaraToken
+
+[11] TELEGRAM
+https://t.me/NexaraOfficial
+
+[12] GITHUB
+https://github.com/nexara-protocol/nexara-token
+
+[13] LOGO GEREKSINIMLERI
+- 200x200 piksel PNG
+- Şeffaf arka plan
+- Yuvarlak format tercih edilir
+→ Logo tasarımı: nexara-token.netlify.app/logo.png
+
+[14] UNISWAP POOL (zorunlu — mainnet sonrası)
+https://app.uniswap.org/explore/tokens/ethereum/[mainnet-kontrat]
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+NOT: CoinGecko min 10 Uniswap işlemi ister.
+Mainnet + likidite havuzu açıldıktan sonra başvur.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

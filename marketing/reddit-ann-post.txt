@@ -1,0 +1,85 @@
+BAŞLIK:
+[ANN] Nexara (NXR) — Stake to Access AI Trading Bot | 2% Burn | 12% APY | Anti-Whale | Superajan Integration
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+POST İÇERİĞİ:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+**What is Nexara?**
+
+Nexara (NXR) is a DeFi token that gives holders access to **Superajan** — an AI-powered trading bot running on Binance USD-M perpetual futures markets.
+
+Instead of paying monthly subscription fees, you stake NXR. The more you stake, the more features you unlock. Bot profits are distributed back to stakers.
+
+---
+
+**Why does NXR have value?**
+
+Unlike most tokens, NXR has **real utility**:
+
+- 🤖 **Access** — Stake NXR to use Superajan bot
+- 💰 **Revenue share** — Bot profits → staker rewards
+- 🔥 **Deflation** — 2% burned on every transfer
+- 📈 **Staking yield** — 12% APY from transfer fees
+
+---
+
+**Tier System**
+
+| Tier | Stake Required | Access |
+|------|---------------|--------|
+| 🥉 Bronze | 10,000 NXR | Basic signals, 3 pairs |
+| 🥈 Silver | 50,000 NXR | Whale tracking, 10 pairs |
+| 🥇 Gold | 200,000 NXR | Full access, priority support |
+
+---
+
+**Token Details**
+
+- **Name:** Nexara
+- **Symbol:** NXR
+- **Total Supply:** 100,000,000
+- **Network:** Ethereum (Sepolia testnet — mainnet coming Q3 2026)
+- **Transfer Burn:** 2%
+- **Staking Fee:** 1% per transfer → staking pool
+- **Max Wallet:** 1% of supply (anti-whale)
+
+---
+
+**Contracts (Sepolia Testnet)**
+
+- Token: `0xa14F7e4DE163Bc05297AF005B6cD44A770842187`
+- Staking: `0xa589014ee01E4F4f473ABD5587d304fA4879F5E4`
+
+Etherscan: https://sepolia.etherscan.io/address/0xa14F7e4DE163Bc05297AF005B6cD44A770842187
+
+---
+
+**Roadmap**
+
+- ✅ Q2 2026 — Token + Staking deployed
+- 🔄 Q3 2026 — Mainnet + Bot access tiers
+- 🔜 Q4 2026 — Uniswap V3 + CoinGecko listing
+- 🔮 2027 — Governance + Multi-exchange
+
+---
+
+**Links**
+
+- Telegram: [link]
+- Twitter: [link]
+- GitHub: [link]
+- Whitepaper: [link]
+
+---
+
+*This is not financial advice. DYOR.*
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PAYLAŞILACAK SUBREDDITLER (sırayla):
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. r/CryptoMoonShots  ← İlk buraya
+2. r/DeFi
+3. r/ethtrader
+4. r/altcoin
+5. r/CryptoCurrency (kural: min 500 karma gerekli)

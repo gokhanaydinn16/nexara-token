@@ -1,0 +1,33 @@
+# Secrets — NEVER commit
+.env
+agents/.env
+*.key
+mainnet-addresses.json
+polygon-addresses.json
+
+# Dependencies
+node_modules/
+dashboard/venv/
+**/__pycache__/
+*.pyc
+
+# Hardhat
+artifacts/
+cache/
+typechain-types/
+
+# Logs
+*.log
+bot.log
+bot.err
+agents/*.log
+
+# Netlify
+.netlify/
+
+# Slither
+slither-report.json
+
+# OS
+Thumbs.db
+.DS_Store

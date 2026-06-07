@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Nexara — Security Audit Report</title>
+<link rel="icon" type="image/png" href="nxr-logo.png"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#05070f;color:#e0e0e0;font-family:Inter,sans-serif;padding:40px 24px;max-width:860px;margin:0 auto}
+.logo{font-family:'Space Grotesk',sans-serif;font-size:1.4rem;font-weight:700;color:#4fc3f7;margin-bottom:8px}
+.logo span{color:#fff}
+h1{font-family:'Space Grotesk',sans-serif;font-size:2.2rem;margin:16px 0 4px}
+.sub{color:#6b7280;margin-bottom:32px}
+.shield{font-size:3rem;margin-bottom:8px}
+h2{font-family:'Space Grotesk',sans-serif;color:#4fc3f7;font-size:1.2rem;margin:28px 0 14px;border-bottom:1px solid #21262d;padding-bottom:8px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin:16px 0}
+.stat{background:#161b22;border:1px solid #21262d;border-radius:12px;padding:18px;text-align:center}
+.stat .n{font-family:'Space Grotesk',sans-serif;font-size:1.8rem;font-weight:700}
+.stat .l{font-size:.75rem;color:#6b7280;margin-top:4px}
+.green{color:#66bb6a}
+.box{background:#161b22;border:1px solid #21262d;border-radius:12px;padding:18px;margin:10px 0;font-size:.92rem;line-height:1.6}
+.check{color:#66bb6a;font-weight:700}
+ul{list-style:none;padding:0}
+li{padding:8px 0;font-size:.92rem;border-bottom:1px solid #161b22}
+li::before{content:"✓ ";color:#66bb6a;font-weight:700}
+.copy{background:#0d1117;border:1px solid #21262d;border-radius:8px;padding:10px;font-family:monospace;font-size:.78rem;color:#4fc3f7;margin:6px 0;word-break:break-all}
+.foot{color:#6b7280;font-size:.78rem;margin-top:32px;text-align:center;line-height:1.6}
+a{color:#4fc3f7;text-decoration:none}
+.badge{display:inline-block;background:rgba(102,187,106,.15);color:#66bb6a;border:1px solid #66bb6a;border-radius:100px;padding:6px 16px;font-size:.85rem;font-weight:700;margin-bottom:20px}
+</style>
+</head>
+<body>
+<div class="logo">NEXARA <span>AUDIT</span></div>
+<div class="shield">🛡️</div>
+<h1>Security Audit Report</h1>
+<p class="sub">Automated static analysis · Slither v0.11.5 (Trail of Bits)</p>
+
+<div class="badge">✅ NO CRITICAL VULNERABILITIES</div>
+
+<h2>Summary</h2>
+<div class="grid">
+  <div class="stat"><div class="n green">0</div><div class="l">Critical</div></div>
+  <div class="stat"><div class="n green">0</div><div class="l">High</div></div>
+  <div class="stat"><div class="n green">0</div><div class="l">Medium</div></div>
+  <div class="stat"><div class="n">18</div><div class="l">Contracts</div></div>
+  <div class="stat"><div class="n">101</div><div class="l">Detectors</div></div>
+</div>
+
+<h2>Security Strengths</h2>
+<ul>
+  <li>Built on OpenZeppelin audited libraries</li>
+  <li>ReentrancyGuard on Staking, Treasury & Pay</li>
+  <li>SafeERC20 safe token transfers</li>
+  <li>Owner-only access control (Ownable)</li>
+  <li>Anti-whale max wallet protection</li>
+  <li>Fixed supply, no hidden mint</li>
+  <li>Checks-effects-interactions pattern</li>
+</ul>
+
+<h2>Methodology</h2>
+<div class="box">
+Analysis performed with <b>Slither</b>, the industry-standard open-source Solidity static analyzer developed by Trail of Bits and used by leading audit firms. All Nexara contracts were scanned across 101 vulnerability detectors including reentrancy, access control, arithmetic, and low-level call checks.
+<br/><br/>
+Result: <span class="check">No critical, high, or medium severity issues.</span> Only minor cosmetic/gas-optimization notes were flagged.
+</div>
+
+<h2>Audited Contracts (Sepolia)</h2>
+<div class="copy">Token: 0xa14F7e4DE163Bc05297AF005B6cD44A770842187</div>
+<div class="copy">Staking: 0xa589014ee01E4F4f473ABD5587d304fA4879F5E4</div>
+<div class="copy">Pay: 0xA8a25e6c8A80B4c7456168951190037fb757c119</div>
+
+<h2>Disclaimer</h2>
+<div class="box">
+This is an automated static analysis (self-audit) demonstrating security best practices. For mainnet launch with significant liquidity, a professional manual audit (Certik, Hacken, PeckShield) is recommended as an additional layer.
+</div>
+
+<p class="foot">
+Nexara Protocol · Founded by Gökhan Aydın · <a href="index.html">Home</a> · <a href="press.html">Press Kit</a><br/>
+Audit: Slither v0.11.5 — June 2026
+</p>
+</body>
+</html>

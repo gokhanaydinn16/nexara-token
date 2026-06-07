@@ -1,0 +1,71 @@
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+UNİSWAP V3 LİKİDİTE HAVUZU — ADIM ADIM
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Bu işlemi mainnet deploy sonrası yapacaksın.
+
+HAZIRLIK:
+✅ MetaMask'ta mainnet hesabı
+✅ En az 500$ değer ETH (ne kadar çok o kadar iyi)
+✅ NXR tokenları (cüzdanında olacak — zaten mint edildi)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ADIM 1: Uniswap'a Git
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+https://app.uniswap.org/pool → "New Position"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ADIM 2: Token Çifti Seç
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Token A: ETH
+Token B: NXR kontrat adresini yapıştır
+         [mainnet adresi buraya]
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ADIM 3: Fee Tier Seç
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+%1 seç (yeni tokenlar için standart)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ADIM 4: Başlangıç Fiyatı Belirle
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+İlk fiyatı sen belirlersin.
+Örnek:
+  1 ETH = 3,000$ → 1 NXR = 0.003$ istiyorsan
+  = 1 ETH için 1,000,000 NXR koyarsın
+
+Tavsiye: 1 NXR = 0.001$ - 0.01$ arası başla
+(çok yüksek başlarsan kimse almaz)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ADIM 5: Fiyat Aralığı
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+"Full Range" seç (en geniş aralık)
+Yeni token için en güvenlisi bu.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ADIM 6: Likidite Miktarı
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ETH miktarı gir → NXR otomatik hesaplanır
+"Approve NXR" → İmzala
+"Add Liquidity" → İmzala
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ADIM 7: Tamamlandı!
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Artık NXR alınıp satılabilir!
+DexScreener, DEXTools, GeckoTerminal
+otomatik olarak 5-30 dakika içinde
+NXR'yi listeler.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+MİNİMUM LİKİDİTE TAVSİYESİ
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+500$   → Başlangıç (fiyat oynar ama olur)
+2,000$ → Sağlıklı (tavsiye edilen minimum)
+5,000$ → Güvenilir görünüm
+10,000$→ Ciddi proje izlenimi
+
+NOT: Likidite az olursa "rug pull" şüphesi oluşur.
+En az 1,000$-2,000$ likidite koy.
