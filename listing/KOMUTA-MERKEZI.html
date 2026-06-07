@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>NEXARA — Listing Komuta Merkezi</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0a0f;color:#e0e0e0;font-family:Inter,system-ui,sans-serif;padding:20px;max-width:1400px;margin:0 auto}
+h1{color:#4fc3f7;font-size:1.6rem;margin-bottom:4px}
+.sub{color:#6b7280;margin-bottom:20px;font-size:.9rem}
+.data-bar{background:#161b22;border:1px solid #30363d;border-radius:12px;padding:16px;margin-bottom:20px;display:flex;flex-wrap:wrap;gap:10px}
+.chip{background:#0d1117;border:1px solid #21262d;border-radius:8px;padding:8px 12px;font-size:.8rem;cursor:pointer;transition:.15s}
+.chip:hover{border-color:#4fc3f7;color:#4fc3f7}
+.chip b{color:#6b7280;font-weight:500;margin-right:6px}
+.tier{margin:24px 0 12px;font-size:1.1rem;color:#fff;font-weight:600;display:flex;align-items:center;gap:8px}
+.tier .tag{font-size:.7rem;padding:3px 10px;border-radius:100px;font-weight:600}
+.t1{background:rgba(102,187,106,.15);color:#66bb6a}
+.t2{background:rgba(255,167,38,.15);color:#ffa726}
+.t3{background:rgba(239,83,80,.15);color:#ef5350}
+.note{font-size:.78rem;color:#6b7280;margin-bottom:12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px}
+.card{background:#161b22;border:1px solid #30363d;border-radius:10px;padding:16px;display:flex;flex-direction:column;gap:8px}
+.card.done{opacity:.55;border-color:#166534}
+.card h3{font-size:.95rem;color:#fff;display:flex;align-items:center;justify-content:space-between}
+.card .u{font-size:.72rem;color:#6b7280}
+.row2{display:flex;gap:8px;margin-top:4px}
+.open{flex:1;background:#1d4ed8;color:#fff;text-align:center;padding:8px;border-radius:8px;text-decoration:none;font-size:.8rem;font-weight:600}
+.open:hover{background:#2563eb}
+.chk{width:34px;background:#0d1117;border:1px solid #30363d;border-radius:8px;color:#66bb6a;font-size:.9rem;cursor:pointer}
+.chk.on{background:#166534;border-color:#166534}
+.toast{position:fixed;bottom:20px;right:20px;background:#166534;color:#fff;padding:10px 18px;border-radius:8px;display:none}
+</style>
+</head>
+<body>
+<h1>🔷 NEXARA — Listing Komuta Merkezi</h1>
+<p class="sub">Her chip'e tıkla = kopyalanır. "Aç" = site açılır. Yapıştır, gönder, ✓ işaretle.</p>
+
+<div class="data-bar">
+  <span class="chip" onclick="c(this,'Nexara')"><b>İsim</b>Nexara</span>
+  <span class="chip" onclick="c(this,'NXR')"><b>Sembol</b>NXR</span>
+  <span class="chip" onclick="c(this,'0xa14F7e4DE163Bc05297AF005B6cD44A770842187')"><b>Kontrat</b>0xa14F7e...842187</span>
+  <span class="chip" onclick="c(this,'Ethereum')"><b>Ağ</b>Ethereum</span>
+  <span class="chip" onclick="c(this,'https://nexara-token.netlify.app')"><b>Web</b>nexara-token.netlify.app</span>
+  <span class="chip" onclick="c(this,'https://x.com/NexaraNXR')"><b>X</b>@NexaraNXR</span>
+  <span class="chip" onclick="c(this,'https://github.com/gokhanaydinn16/nexara-token')"><b>GitHub</b>repo</span>
+  <span class="chip" onclick="c(this,'https://nexara-token.netlify.app/audit.html')"><b>Audit</b>audit.html</span>
+  <span class="chip" onclick="c(this,'100000000')"><b>Arz</b>100M</span>
+  <span class="chip" onclick="c(this,'Nexara (NXR) is a deflationary ERC-20 token that tokenizes access to Superajan, an AI-powered trading bot. Stake to access bot features. 2% burn, 12% APY staking, anti-whale. Verified contract, open source, audited.')"><b>Açıklama</b>kopyala</span>
+</div>
+
+<!-- TIER 1 -->
+<div class="tier"><span class="tag t1">ŞİMDİ</span> Ücretsiz Dizinler (mainnet gerekmez)</div>
+<p class="note">Hemen başvurulabilir. Backlink + görünürlük + Google sinyali sağlar.</p>
+<div class="grid" id="t1"></div>
+
+<!-- TIER 2 -->
+<div class="tier"><span class="tag t2">MAINNET SONRASI</span> Büyük Trackerlar (DEX likidite şart)</div>
+<p class="note">CoinGecko/CMC, aktif Uniswap havuzu ister. DexScreener/DEXTools DEX'e girince otomatik çıkar.</p>
+<div class="grid" id="t2"></div>
+
+<!-- TIER 3 -->
+<div class="tier"><span class="tag t3">TOPLULUK SONRASI</span> Merkezi Borsalar (hacim/topluluk şart)</div>
+<p class="note">CEX'ler genelde traction (hacim+topluluk) ister. Erken başvuru çoğunlukla reddedilir — ama ücretsiz, denenebilir.</p>
+<div class="grid" id="t3"></div>
+
+<div class="toast" id="toast">✓ Kopyalandı</div>
+
+<script>
+const T1=[
+ ["CoinSniper","coinsniper.net/submit","✅ Yapıldı",1],
+ ["CoinScope","coinscope.co/submit-coin","Ücretsiz + oy",0],
+ ["CoinMooner","coinmooner.com/submit","Ücretsiz + oy",0],
+ ["GemFinder","gemfinder.io","Ücretsiz",0],
+ ["Coinvote","coinvote.cc/add-coin","Ücretsiz oy",0],
+ ["FreshCoins","freshcoins.io/submit-coin","Ücretsiz",0],
+ ["CoinDiscovery","coindiscovery.app/submit-coin","Ücretsiz",0],
+ ["CoinHunt","coinhunt.cc/add-coin","Cüzdan ister",0],
+ ["CoinCatapult","coincatapult.com/submit-coin","Ücretsiz",0],
+ ["CoinAlpha","coinalpha.app","Ücretsiz",0],
+ ["Reddit r/CryptoMoonShots","reddit.com/r/CryptoMoonShots/submit","Hazır metin var",0],
+ ["BitcoinTalk ANN","bitcointalk.org/index.php?board=159.0","Hazır metin var",0],
+];
+const T2=[
+ ["CoinGecko","coingecko.com/en/coins/submit","DEX havuzu şart",0],
+ ["CoinMarketCap","coinmarketcap.com/request","DEX + 100 holder",0],
+ ["DexScreener","dexscreener.com","DEX'te OTOMATİK",0],
+ ["DEXTools","dextools.io","DEX'te OTOMATİK",0],
+ ["GeckoTerminal","geckoterminal.com","DEX'te OTOMATİK",0],
+ ["LiveCoinWatch","livecoinwatch.com/submit","DEX sonrası",0],
+ ["CryptoRank","cryptorank.io","Proje sayfası",0],
+];
+const T3=[
+ ["MEXC","mexc.com/listing-apply","En kolay CEX",0],
+ ["Gate.io","gate.io/listing-apply","Oylama sistemi",0],
+ ["BitMart","bitmart.com/listing","Form",0],
+ ["LBank","lbank.com/listing","Küçük projeler",0],
+ ["CoinEx","coinex.com/listing","Form",0],
+ ["Bitget","bitget.com/listing","Form",0],
+ ["XT.com","xt.com/listing","Form",0],
+];
+function card(x){
+ const a='https://'+x[1];
+ return `<div class="card${x[2].includes('Yapıldı')?' done':''}">
+  <h3>${x[0]}</h3>
+  <div class="u">${x[1]}</div>
+  <div class="u" style="color:#4fc3f7">${x[2]}</div>
+  <div class="row2">
+    <a class="open" href="${a}" target="_blank">Aç →</a>
+    <div class="chk" onclick="this.classList.toggle('on');this.textContent=this.classList.contains('on')?'✓':''">${x[3]?'✓':''}</div>
+  </div></div>`;
+}
+document.getElementById('t1').innerHTML=T1.map(card).join('');
+document.getElementById('t2').innerHTML=T2.map(card).join('');
+document.getElementById('t3').innerHTML=T3.map(card).join('');
+T1.forEach((x,i)=>{if(x[3])document.querySelectorAll('#t1 .chk')[i].classList.add('on')});
+function c(el,txt){navigator.clipboard.writeText(txt);const t=document.getElementById('toast');t.style.display='block';setTimeout(()=>t.style.display='none',1200)}
+</script>
+</body>
+</html>

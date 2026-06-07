@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Nexara — Live Stats & Staking Calculator</title>
+<link rel="icon" type="image/png" href="nxr-logo.png"/>
+<meta property="og:title" content="Nexara (NXR) — Live On-Chain Stats"/>
+<meta property="og:description" content="Watch NXR burn in real time. Calculate your staking rewards."/>
+<meta property="og:image" content="og-card.png"/>
+<script src="https://cdn.jsdelivr.net/npm/ethers@6.13.0/dist/ethers.umd.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--blue:#4fc3f7;--blue2:#0288d1;--green:#66bb6a;--orange:#ff7043;--bg:#05070f;--bg3:#161b22;--text:#e0e0e0;--muted:#6b7280;--border:#21262d}
+body{background:var(--bg);color:var(--text);font-family:Inter,sans-serif;padding:24px;min-height:100vh}
+.wrap{max-width:1000px;margin:0 auto}
+.nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:40px}
+.logo{font-family:'Space Grotesk',sans-serif;font-size:1.4rem;font-weight:700;color:var(--blue)}
+.logo span{color:#fff}
+.home{color:var(--muted);text-decoration:none;font-size:.9rem}
+.home:hover{color:var(--blue)}
+h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(2rem,5vw,3rem);text-align:center;margin-bottom:6px}
+.sub{text-align:center;color:var(--muted);margin-bottom:8px}
+.live{display:inline-flex;align-items:center;gap:6px;font-size:.8rem;color:var(--green);justify-content:center;width:100%;margin-bottom:40px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green);animation:p 2s infinite}
+@keyframes p{0%,100%{opacity:1}50%{opacity:.3}}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-bottom:40px}
+.stat{background:var(--bg3);border:1px solid var(--border);border-radius:16px;padding:28px;text-align:center;position:relative;overflow:hidden}
+.stat::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue2),var(--blue))}
+.stat.burn::before{background:linear-gradient(90deg,var(--orange),#ff5722)}
+.stat .label{font-size:.8rem;color:var(--muted);margin-bottom:10px;text-transform:uppercase;letter-spacing:.5px}
+.stat .num{font-family:'Space Grotesk',sans-serif;font-size:2rem;font-weight:700;color:var(--blue)}
+.stat.burn .num{color:var(--orange)}
+.stat .unit{font-size:.85rem;color:var(--muted);margin-top:4px}
+
+.calc{background:var(--bg3);border:1px solid var(--border);border-radius:20px;padding:32px;margin-bottom:30px}
+.calc h2{font-family:'Space Grotesk',sans-serif;color:var(--blue);font-size:1.4rem;margin-bottom:8px}
+.calc p{color:var(--muted);font-size:.9rem;margin-bottom:24px}
+.calc-in{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px}
+.calc-in input,.calc-in select{flex:1;min-width:160px;background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:14px;color:#fff;font-size:1rem}
+.calc-in input:focus{outline:none;border-color:var(--blue)}
+.results{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.res{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:18px;text-align:center}
+.res .rl{font-size:.72rem;color:var(--muted);margin-bottom:6px}
+.res .rv{font-family:'Space Grotesk',sans-serif;font-size:1.4rem;font-weight:700;color:var(--green)}
+
+.tier-note{background:rgba(79,195,247,.06);border:1px solid rgba(79,195,247,.2);border-radius:12px;padding:16px;font-size:.85rem;color:var(--muted);text-align:center;margin-bottom:30px}
+.tier-note b{color:var(--blue)}
+.foot{text-align:center;color:var(--muted);font-size:.78rem;line-height:1.6;margin-top:20px}
+.foot a{color:var(--blue);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="nav">
+    <div class="logo">NEXARA <span>LIVE</span></div>
+    <a class="home" href="index.html">← Home</a>
+  </div>
+
+  <h1>Live On-Chain Stats</h1>
+  <p class="sub">Real-time data, straight from the blockchain.</p>
+  <div class="live"><span class="dot"></span><span id="liveTxt">Connecting to Ethereum…</span></div>
+
+  <!-- STATS -->
+  <div class="grid">
+    <div class="stat">
+      <div class="label">Total Supply</div>
+      <div class="num" id="supply">—</div>
+      <div class="unit">NXR (max 100M)</div>
+    </div>
+    <div class="stat burn">
+      <div class="label">🔥 Total Burned</div>
+      <div class="num" id="burned">—</div>
+      <div class="unit">NXR gone forever</div>
+    </div>
+    <div class="stat">
+      <div class="label">Circulating</div>
+      <div class="num" id="circ">—</div>
+      <div class="unit">NXR in circulation</div>
+    </div>
+    <div class="stat">
+      <div class="label">Burn Rate</div>
+      <div class="num">2%</div>
+      <div class="unit">per transfer</div>
+    </div>
+  </div>
+
+  <!-- CALCULATOR -->
+  <div class="calc">
+    <h2>🧮 Staking Rewards Calculator</h2>
+    <p>See what your NXR could earn at 12% APY. (Projection — not a guarantee.)</p>
+    <div class="calc-in">
+      <input type="number" id="amount" placeholder="Amount of NXR" value="50000" min="0"/>
+      <select id="period">
+        <option value="30">30 days</option>
+        <option value="90">90 days</option>
+        <option value="365" selected>1 year</option>
+      </select>
+    </div>
+    <div class="results">
+      <div class="res"><div class="rl">Estimated Reward</div><div class="rv" id="reward">—</div></div>
+      <div class="res"><div class="rl">Total After Period</div><div class="rv" id="total">—</div></div>
+      <div class="res"><div class="rl">Your Tier</div><div class="rv" id="tier">—</div></div>
+    </div>
+  </div>
+
+  <div class="tier-note">
+    🥉 Bronze 10K · 🥈 Silver 50K · 🥇 Gold 200K NXR — <b>stake more, unlock more</b>
+  </div>
+
+  <p class="foot">
+    Data read live from the NXR contract on Ethereum Sepolia ·
+    <a href="https://sepolia.etherscan.io/address/0xa14F7e4DE163Bc05297AF005B6cD44A770842187" target="_blank">Verify on Etherscan</a><br/>
+    Projections are estimates, not financial advice. APY may vary.
+  </p>
+</div>
+
+<script>
+const RPC = "https://ethereum-sepolia-rpc.publicnode.com";
+const TOKEN = "0xa14F7e4DE163Bc05297AF005B6cD44A770842187";
+const ABI = [
+  "function totalSupply() view returns (uint256)",
+  "function totalBurned() view returns (uint256)",
+  "function circulatingSupply() view returns (uint256)",
+  "function decimals() view returns (uint8)"
+];
+
+function fmt(n){ return Number(n).toLocaleString('en-US',{maximumFractionDigits:0}); }
+function animate(id,target){
+  const el=document.getElementById(id); let cur=0; const steps=40; const inc=target/steps; let i=0;
+  const t=setInterval(()=>{ i++; cur+=inc; if(i>=steps){cur=target;clearInterval(t);} el.textContent=fmt(cur); },25);
+}
+
+async function load(){
+  try{
+    const p=new ethers.JsonRpcProvider(RPC);
+    const c=new ethers.Contract(TOKEN,ABI,p);
+    const dec=await c.decimals();
+    const [sup,burn,circ]=await Promise.all([c.totalSupply(),c.totalBurned(),c.circulatingSupply()]);
+    const d=Number(dec);
+    animate('supply',Number(ethers.formatUnits(sup,d)));
+    animate('burned',Number(ethers.formatUnits(burn,d)));
+    animate('circ',Number(ethers.formatUnits(circ,d)));
+    document.getElementById('liveTxt').textContent='Live · connected to Ethereum';
+  }catch(e){
+    document.getElementById('liveTxt').textContent='Network busy — retrying…';
+    document.getElementById('supply').textContent='100,000,000';
+    document.getElementById('burned').textContent='0';
+    document.getElementById('circ').textContent='100,000,000';
+    setTimeout(load,5000);
+  }
+}
+
+function calc(){
+  const amt=Number(document.getElementById('amount').value)||0;
+  const days=Number(document.getElementById('period').value);
+  const reward=amt*0.12*(days/365);
+  document.getElementById('reward').textContent=fmt(reward)+' NXR';
+  document.getElementById('total').textContent=fmt(amt+reward)+' NXR';
+  let tier='None'; if(amt>=200000)tier='🥇 Gold'; else if(amt>=50000)tier='🥈 Silver'; else if(amt>=10000)tier='🥉 Bronze';
+  document.getElementById('tier').textContent=tier;
+}
+document.getElementById('amount').addEventListener('input',calc);
+document.getElementById('period').addEventListener('change',calc);
+calc(); load();
+setInterval(load,30000); // her 30 sn yenile
+</script>
+</body>
+</html>

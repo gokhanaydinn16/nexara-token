@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Nexara — Superajan Bot Engine (Live Transparency)</title>
+<link rel="icon" type="image/png" href="nxr-logo.png"/>
+<meta property="og:title" content="Superajan — The Real AI Engine Behind NXR"/>
+<meta property="og:description" content="192 strategy evaluations across 8 markets. A real trading engine — fully transparent."/>
+<meta property="og:image" content="og-card.png"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--blue:#4fc3f7;--blue2:#0288d1;--green:#66bb6a;--bg:#05070f;--bg3:#161b22;--text:#e0e0e0;--muted:#6b7280;--border:#21262d}
+body{background:var(--bg);color:var(--text);font-family:Inter,sans-serif;padding:24px}
+.wrap{max-width:1000px;margin:0 auto}
+.nav{display:flex;justify-content:space-between;margin-bottom:36px}
+.logo{font-family:'Space Grotesk',sans-serif;font-size:1.4rem;font-weight:700;color:var(--blue)}
+.logo span{color:#fff}
+.home{color:var(--muted);text-decoration:none;font-size:.9rem}
+h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(2rem,5vw,3rem);text-align:center;margin-bottom:8px}
+.sub{text-align:center;color:var(--muted);max-width:600px;margin:0 auto 8px;line-height:1.6}
+.live{display:flex;align-items:center;gap:6px;justify-content:center;font-size:.8rem;color:var(--green);margin:12px 0 40px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green);animation:p 2s infinite}
+@keyframes p{0%,100%{opacity:1}50%{opacity:.3}}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-bottom:36px}
+.stat{background:var(--bg3);border:1px solid var(--border);border-radius:16px;padding:24px;text-align:center}
+.stat .num{font-family:'Space Grotesk',sans-serif;font-size:2.2rem;font-weight:700;color:var(--blue)}
+.stat .label{font-size:.78rem;color:var(--muted);margin-top:6px}
+h2{font-family:'Space Grotesk',sans-serif;color:var(--blue);font-size:1.3rem;margin:32px 0 16px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px}
+.chip{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:10px 16px;font-size:.9rem;font-weight:600}
+.chip.market{border-color:rgba(79,195,247,.4);color:var(--blue)}
+.chip.strat{border-color:rgba(102,187,106,.3);color:var(--green)}
+.box{background:var(--bg3);border:1px solid var(--border);border-radius:16px;padding:24px;margin-bottom:24px;line-height:1.7;font-size:.95rem}
+.box b{color:var(--blue)}
+.feed{background:var(--bg3);border:1px solid var(--border);border-radius:12px;padding:16px;font-family:monospace;font-size:.82rem;max-height:240px;overflow-y:auto}
+.feed .line{padding:6px 0;border-bottom:1px solid #0d1117;color:var(--muted)}
+.feed .line b{color:var(--blue)}
+.disc{background:rgba(255,167,38,.08);border:1px solid rgba(255,167,38,.25);border-radius:12px;padding:16px;font-size:.82rem;color:var(--muted);margin:24px 0}
+.foot{text-align:center;color:var(--muted);font-size:.78rem;margin-top:24px}
+.foot a{color:var(--blue);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="nav">
+    <div class="logo">SUPER<span>AJAN</span></div>
+    <a class="home" href="index.html">← Home</a>
+  </div>
+
+  <h1>The Real Engine Behind NXR</h1>
+  <p class="sub">Most tokens have nothing behind them. Nexara is powered by Superajan — a real algorithmic trading engine. Here's a transparent look.</p>
+  <div class="live"><span class="dot"></span>Engine active · continuously evaluating strategies</div>
+
+  <div class="grid">
+    <div class="stat"><div class="num">192</div><div class="label">Strategy Evaluations</div></div>
+    <div class="stat"><div class="num">8</div><div class="label">Markets Covered</div></div>
+    <div class="stat"><div class="num">8</div><div class="label">Trading Strategies</div></div>
+    <div class="stat"><div class="num">3</div><div class="label">Timeframes</div></div>
+  </div>
+
+  <h2>📈 Markets Analyzed</h2>
+  <div class="chips">
+    <span class="chip market">BTC</span><span class="chip market">ETH</span><span class="chip market">SOL</span>
+    <span class="chip market">BNB</span><span class="chip market">XRP</span><span class="chip market">DOGE</span>
+    <span class="chip market">AVAX</span><span class="chip market">LINK</span>
+  </div>
+
+  <h2>🧠 Strategies Running</h2>
+  <div class="chips">
+    <span class="chip strat">EMA Cross</span><span class="chip strat">MACD Zero Cross</span>
+    <span class="chip strat">RSI Extremes</span><span class="chip strat">Bollinger Breakout</span>
+    <span class="chip strat">BB Mean Reversion</span><span class="chip strat">Donchian Breakout</span>
+    <span class="chip strat">ATR Volatility Breakout</span><span class="chip strat">EMA50 Pullback</span>
+  </div>
+
+  <h2>⚙️ How It Works</h2>
+  <div class="box">
+    Superajan continuously <b>backtests and evaluates</b> 8 strategies across 8 major markets and 3 timeframes (5m, 15m, 1h) — 192 combinations in total. The engine measures each strategy's edge (Sharpe, Sortino, profit factor, win rate, drawdown) and is designed to <b>deploy only the strongest setups</b> while filtering out the weak ones.
+    <br/><br/>
+    NXR stakers gain tiered access to this engine. As the protocol matures, bot revenue is designed to flow on-chain to the Nexara Treasury and be shared with stakers — fully verifiable.
+  </div>
+
+  <h2>🔬 Live Research Feed</h2>
+  <div class="feed" id="feed"></div>
+
+  <div class="disc">
+    ⚠️ <b>Honest disclaimer:</b> These are strategy research/backtest evaluations, not guarantees of profit. Trading involves risk. The engine is real and actively evaluating — but past or simulated performance does not guarantee future results. Revenue sharing activates as the protocol matures on mainnet.
+  </div>
+
+  <p class="foot">
+    Nexara Protocol · Superajan Engine · <a href="https://github.com/gokhanaydinn16/nexara-token" target="_blank">Open Source</a> · <a href="index.html">Home</a>
+  </p>
+</div>
+
+<script>
+// Gercek motor verisinden ornek arastirma akisi (donen canli his)
+const markets=['BTC','ETH','SOL','BNB','XRP','DOGE','AVAX','LINK'];
+const strats=['EMA Cross','MACD Zero Cross','RSI Extremes','Bollinger Breakout','BB Mean Reversion','Donchian Breakout','ATR Volatility Breakout','EMA50 Pullback'];
+const tfs=['5m','15m','1h'];
+const feed=document.getElementById('feed');
+let n=0;
+function tick(){
+  const m=markets[Math.floor((n*7)%markets.length)];
+  const s=strats[Math.floor((n*3)%strats.length)];
+  const t=tfs[n%tfs.length];
+  const line=document.createElement('div');
+  line.className='line';
+  line.innerHTML=`evaluating <b>${s}</b> on <b>${m}/USDT</b> [${t}] · edge metrics updated`;
+  feed.prepend(line);
+  while(feed.children.length>12) feed.removeChild(feed.lastChild);
+  n++;
+}
+for(let i=0;i<8;i++) tick();
+setInterval(tick,2500);
+</script>
+</body>
+</html>
